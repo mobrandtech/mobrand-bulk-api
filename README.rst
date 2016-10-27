@@ -1,9 +1,13 @@
-Welcome to the mobrand-bulk-api Docs!
-===============
+
+All Documentation is available on Read The Docs:
+
+`Mobrand Bulk Api Docs`_
 
 `Directlinks Bulk API`_
 
 `App Links Bulk API`_
 
-.. _App Links Bulk API: https://github.com/mobrandtech/mobrand-bulk-api/wiki/Smartlink-Bulk-API
-.. _Directlinks Bulk API: https://github.com/mobrandtech/mobrand-bulk-api/wiki/Directlink-Bulk-API
+
+.. _Mobrand Bulk Api Docs: http://mobrand-bulk-api.readthedocs.io/en/latest/
+.. _App Links Bulk API: http://mobrand-bulk-api.readthedocs.io/en/latest/applinkbulkapi.html
+.. _Directlinks Bulk API: http://mobrand-bulk-api.readthedocs.io/en/latest/directlinkbulkapi.html
