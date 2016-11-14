@@ -97,6 +97,18 @@ To not show incent offers, the argument should be incent=false.
 
 To show all the offers (no filter), just omit the argument.
 
+^^^^^^^^^^^^^^^
+ Top offers
+^^^^^^^^^^^^^^^
+
+``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}?onlyTop=x``
+
+|  x will be the number of offers per App.
+|  To show only our top offers on each App the argument should be onlyTop=1.
+
+
+To show all the offers (no filter), just omit the argument.
+
 ------------------
  Offerlink Details
 ------------------
