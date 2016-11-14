@@ -92,8 +92,8 @@ Example Response:
 
 ``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?incent=true/false``
 
-To show only incent offers, the argument should be incent=true.
-To not show incent offers, the argument should be incent=false.
+|  To show only incent offers, the argument should be incent=true.
+|  To not show incent offers, the argument should be incent=false.
 
 To show all the offers (no filter), just omit the argument.
 
@@ -105,7 +105,6 @@ To show all the offers (no filter), just omit the argument.
 
 |  x will be the number of offers per App.
 |  To show only our top offers on each App the argument should be onlyTop=1.
-
 
 To show all the offers (no filter), just omit the argument.
 
