@@ -46,10 +46,12 @@ Example Response:
         {
           "id": "BTYcMxoNN1ZhYiUDZ3NdZ3gyH2kzVg",
           "countries": [
-            "kr"
+            "kr",
+            "jp"
           ],
           "payout": 2.5,
           "incent": false,
+          "health": 0,
           "offerLink": "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/BTYcMxoNN1ZhYiUDZ3NdZ3gyH2kzVg",
           "caps": [
             {
@@ -67,6 +69,7 @@ Example Response:
           ],
           "payout": 3.38,
           "incent": false,
+          "health": 2,
           "offerLink": "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/ETAHOwcSPFZlZHMAan9cYw",
           "caps": [
             {
@@ -81,6 +84,20 @@ Example Response:
       "bundleId": "com.nexonm.dominations.adk"
     }]
   }
+
+
+^^^^^^^^^^^^^^^^^^^^^^
+ Response description
+^^^^^^^^^^^^^^^^^^^^^^
+
+======================  =================================  ===============================================
+ FIELD                      TYPE                            Description
+======================  =================================  ===============================================
+ payout                         Decimal                      Payout value in USD ($)
+ incent                         Boolean                      True allows incent traffic, filter available.
+ health                         Integer                       2 is healthy, 1 is broken, 0 is unknown
+ notes                          String                      Campaign notes, including KPIs. Can be null.
+======================  =================================  ===============================================
 
 
 ---------
@@ -105,6 +122,7 @@ To show all the offers (no filter), just omit the argument.
 
 |  x will be the number of offers per App.
 |  To show only our top offers on each App the argument should be onlyTop=1.
+
 
 To show all the offers (no filter), just omit the argument.
 
