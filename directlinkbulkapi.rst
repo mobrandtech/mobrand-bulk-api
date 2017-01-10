@@ -28,6 +28,29 @@ Http Headers:
 
 **Authorization**: Bearer {JWT}
 
+---------
+ Filters
+---------
+
+======================  =================================  ====================================================
+ Parameters                      TYPE                            Description
+======================  =================================  ====================================================
+ incent                         Boolean                     Show only incent / non-incent traffic, omit for all
+ min_payout                     Decimal                       Minimum value of the payouts to show
+ max_payout                     Decimal                       Maximum value of the payouts to show
+ onlyTop                        Integer                       The maximum number of offers to show per App
+======================  =================================  ====================================================
+
+
+ Example Request:
+
+``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}?incent=false&onlyTop=3&min_payout=0.8``
+
+To show all the offers (no filter), just omit the arguments.
+
+------------
+ Response
+------------
 
 Example Response:
 
@@ -99,32 +122,6 @@ Example Response:
  notes                          String                      Campaign notes, including KPIs. Can be null.
 ======================  =================================  ===============================================
 
-
----------
- Filters
----------
-^^^^^^^^^^^^^^^
- Incent offers
-^^^^^^^^^^^^^^^
-
-``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?incent=true/false``
-
-|  To show only incent offers, the argument should be incent=true.
-|  To not show incent offers, the argument should be incent=false.
-
-To show all the offers (no filter), just omit the argument.
-
-^^^^^^^^^^^^^^^
- Top offers
-^^^^^^^^^^^^^^^
-
-``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}?onlyTop=x``
-
-|  x will be the number of offers per App.
-|  To show only our top offers on each App the argument should be onlyTop=1.
-
-
-To show all the offers (no filter), just omit the argument.
 
 ------------------
  Offerlink Details
