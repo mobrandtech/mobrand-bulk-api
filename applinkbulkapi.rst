@@ -2,7 +2,8 @@
 App Link Bulk API
 ########################
 
-This document describes how to make an API call.
+| This document describes how to make an API call to the App link Bulk resource.
+| An App Link is a Link that will select the best offer (1 direct link) for the App on the requested Geo.
 
 You will need:
  * Your publisher ID
@@ -77,8 +78,8 @@ Example Response:
 
 ``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}?incent=true/false``
 
-To show only incent offers, the argument should be incent=true.
-To not show incent offers, the argument should be incent=false.
+|  To show only incent offers, the argument should be incent=true.
+|  To not show incent offers, the argument should be incent=false.
 
 To show all the offers (no filter), just omit the argument.
 
@@ -88,15 +89,16 @@ To show all the offers (no filter), just omit the argument.
 
 To get postback details and get better tracking you need to add the following arguments
 
-======================  ============================================
+======================  ==============================================
  Arguments available:
-======================  ============================================
- **aff_sub**             for click_id that will be then postbacked
+======================  ==============================================
+ **aff_sub**             Typically used for click_id,sent to postback
+ **aff_sub2**            free macro to be sent on postback
  **source**              for your subid
  **idfa**                iOS Advertising Identifier
  **android_id**          android device id
  **advid**               android advertising id
-======================  ============================================
+======================  ==============================================
 
 ^^^^^^^^^^^^^^^^^^^
  App Link example:

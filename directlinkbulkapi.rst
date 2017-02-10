@@ -1,8 +1,9 @@
 ########################
-Directlink Bulk API
+Direct Link Bulk API
 ########################
 
-This document describes how to make an API call.
+| This document describes how to make an API call to the Direct link Bulk resource.
+| An Direct Link is a Link that represents one single offer.
 
 You will need:
  * Your publisher ID
@@ -10,41 +11,45 @@ You will need:
  * A valid JWT issued by Mobrand
 
 
-----------
+-----------
  Endpoint
-----------
+-----------
+ * URL: https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}
+ * This Endpoint will only respond to GET.
+ * All responses are in JSON.
+ * Single Request. Paging not available.
 
-^^^^^^^^^^
- Method 1
-^^^^^^^^^^
-``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?jwt={validJWT}``
+JWT can be sent on the query String:
 
-^^^^^^^^^^
- Method 2
-^^^^^^^^^^
-``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}``
+  .. code-block:: none
 
-Http Headers:
+    https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?jwt={validJWT}
 
-**Authorization**: Bearer {JWT}
+JWT can also be sent on Authorization request header field:
+
+  .. code-block:: none
+
+    Authorization: Bearer {JWT}
+
 
 ---------
  Filters
 ---------
 
-======================  =================================  ====================================================
+======================  ============================  =========================================================
  Parameters                      TYPE                            Description
-======================  =================================  ====================================================
+======================  ============================  =========================================================
  incent                         Boolean                     Show only incent / non-incent traffic, omit for all
+ healthy                        Boolean                       If true, only healthy offers will be shown
  min_payout                     Decimal                       Minimum value of the payouts to show
  max_payout                     Decimal                       Maximum value of the payouts to show
  onlyTop                        Integer                       The maximum number of offers to show per App
-======================  =================================  ====================================================
+======================  ============================  =========================================================
 
 
  Example Request:
 
-``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}?incent=false&onlyTop=3&min_payout=0.8``
+``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?jwt={validJWT}&incent=false&onlyTop=3&min_payout=0.8``
 
 To show all the offers (no filter), just omit the arguments.
 
@@ -129,18 +134,19 @@ Example Response:
 
 To get postback details and get better tracking you need to add the following arguments
 
-======================  ============================================
+======================  ==============================================
  Arguments available:
-======================  ============================================
- **aff_sub**             for click_id that will be then postbacked
+======================  ==============================================
+ **aff_sub**             Typically used for click_id,sent to postback
+ **aff_sub2**            free macro to be sent on postback
  **source**              for your subid
  **idfa**                iOS Advertising Identifier
  **android_id**          android device id
  **advid**               android advertising id
-======================  ============================================
+======================  ==============================================
 
-^^^^^^^^^^^^^^^^^^^
- App Link example:
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+ Direct Link example:
+^^^^^^^^^^^^^^^^^^^^^^
 
 ``http:``//t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/_LNeaW6gQYKnKJso90PbJA/GCoQNBYWPBoxbnABa3VUZHA?\ **aff_sub**\ =947017de-e150-11e5-b86d-9a79f06e9478&\ **source**\ =thebestsource&\ **idfa**\ =AEBE52E7-03EE-455A-B3C4-E57283966239&\ **android_id**\ =android_id_hash&\ **advid**\ =96bd03b6-defc-4203-83d3-dc1c730801f7
