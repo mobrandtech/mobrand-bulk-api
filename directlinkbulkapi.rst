@@ -36,15 +36,17 @@ JWT can also be sent on Authorization request header field:
  Filters
 ---------
 
-======================  ============================  =========================================================
+======================  ============================  ============================================================
  Parameters                      TYPE                            Description
-======================  ============================  =========================================================
- incent                         Boolean                     Show only incent / non-incent traffic, omit for all
- healthy                        Boolean                       If true, only healthy offers will be shown
- min_payout                     Decimal                       Minimum value of the payouts to show
- max_payout                     Decimal                       Maximum value of the payouts to show
- onlyTop                        Integer                       The maximum number of offers to show per App
-======================  ============================  =========================================================
+======================  ============================  ============================================================
+ incent                         Boolean                   Show only incent / non-incent traffic
+ healthy                        Boolean                   If true, only healthy offers will be shown
+ min_payout                     Decimal                   Minimum value of the payouts to show
+ max_payout                     Decimal                   Maximum value of the payouts to show
+ onlyTop                        Integer                   The maximum number of offers to show per App
+ platform                       String                    Show only "android" or "ios"
+ geos                           String                    ISO 3166 two-letter country codes, separated by comma
+======================  ============================  ============================================================
 
 
  Example Request:
@@ -62,55 +64,57 @@ Example Response:
 .. code-block:: javascript
 
   {
-  "sourceid": "tSDe58XoQwKDzvg7fSPSSA",
-  "campaigns": [
-    {
-      "icon": "http://lh3.googleusercontent.com/-MNNMA7VPCuQAL9EEXMISd87GhMO2hJ7dV6K0j6LCE8jGhtnRQ8VdZlITTdziQvWMLw=w300",
-      "name": "DomiNations",
-      "platform": "android",
-      "category1": "games",
-      "category2": "strategy",
-      "list": [
+    "sourceid": "tSDe58XoQwKDzvg7fSPSSA",
+    "campaigns": [
         {
-          "id": "BTYcMxoNN1ZhYiUDZ3NdZ3gyH2kzVg",
-          "countries": [
-            "kr",
-            "jp"
+          icon: "http://is3.mzstatic.com/image/thumb/Purple122/v4/83/0d/58/830d584b-ca70-53b8-6689-a89f9fd5122c/source/512x512bb.jpg",
+          name: "Stash Invest: Investing & Financial Education",
+          platform: "ios",
+          category1: "apps",
+          category2: "finance",
+          list: [
+              {
+                id: "GyoAMxwDIQluZ3AGZHddYw",
+                countries: [
+                  "us"
+                ],
+                payout: 0.44,
+                incent: false,
+                health: 2,
+                offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/GyoAMxwDIQluZ3AGZHddYw",
+                caps: [
+                  {
+                    type: "Installs",
+                    title: "Daily Cap",
+                    amount: 40
+                  }
+                ],
+                notes: "",
+                offerName: "Stash Invest: Investing & Financial Education - iOS - US - CPI-Incent-US-iOS_[API]",
+                reqDeviceId: false,
+                kpi: "RR 30% first 24hours",
+                userFlow: "STORE > DOWNLOAD > OPEN APP"
+              },
+              {
+                id: "HD4CPRIQPAIxbnUHZ3NU",
+                countries: [
+                  "us"
+                ],
+                payout: 0.22,
+                incent: true,
+                health: 1,
+                offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/HD4CPRIQPAIxbnUHZ3NU",
+                caps: [ ],
+                notes: "Soft incent (CR bellow 7%) | Pause immediately",
+                offerName: "Stash Invest (API) (iPhone 8.0+) US - Incent",
+                reqDeviceId: false,
+                kpi: null,
+                userFlow: null
+              }
           ],
-          "payout": 2.5,
-          "incent": false,
-          "health": 0,
-          "offerLink": "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/BTYcMxoNN1ZhYiUDZ3NdZ3gyH2kzVg",
-          "caps": [
-            {
-              "type": "Installs",
-              "title": "Daily Cap",
-              "amount": 1996
-            }
-          ],
-          "notes": "USER FLOW: \r\n1) User clicks on creative and is forwarded to Apple / Google Play Store \r\n2) User downloads the App on the phone \r\n3) User opens the App after download"
-        },
-        {
-          "id": "ETAHOwcSPFZlZHMAan9cYw",
-          "countries": [
-            "hk"
-          ],
-          "payout": 3.38,
-          "incent": false,
-          "health": 2,
-          "offerLink": "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/ETAHOwcSPFZlZHMAan9cYw",
-          "caps": [
-            {
-              "type": "Installs",
-              "title": "Daily Cap",
-              "amount": 50
-            }
-          ],
-          "notes": null
-        }
-      ],
-      "bundleId": "com.nexonm.dominations.adk"
-    }]
+          minOsVer: "8.0",
+          bundleId: "1017148055"
+        }]
   }
 
 
@@ -118,14 +122,17 @@ Example Response:
  Response description
 ^^^^^^^^^^^^^^^^^^^^^^
 
-======================  =================================  ===============================================
+======================  =============================  =====================================================
  FIELD                      TYPE                            Description
-======================  =================================  ===============================================
+======================  =============================  =====================================================
+ campaigns                      Array                      Description and Info about an App
+ list                           Array                     List of offers available for the App
  payout                         Decimal                      Payout value in USD ($)
- incent                         Boolean                      True allows incent traffic, filter available.
- health                         Integer                       2 is healthy, 1 is broken, 0 is unknown
+ incent                         Boolean                   True allows incent traffic, filter available.
+ reqDeviceId                    Boolean                   if true, add &idfa= & advid= to the tracking link
+ health                         Integer                     2 is healthy, 1 is broken, 0 is unknown
  notes                          String                      Campaign notes, including KPIs. Can be null.
-======================  =================================  ===============================================
+======================  =============================  =====================================================
 
 
 ------------------
