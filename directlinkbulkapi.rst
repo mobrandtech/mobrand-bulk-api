@@ -40,7 +40,6 @@ JWT can also be sent on Authorization request header field:
  Parameters                      TYPE                            Description
 ======================  ============================  ============================================================
  incent                         Boolean                   Show only incent / non-incent traffic
- healthy                        Boolean                   If true, only healthy offers will be shown
  min_payout                     Decimal                   Minimum value of the payouts to show
  max_payout                     Decimal                   Maximum value of the payouts to show
  onlyTop                        Integer                   The maximum number of offers to show per App
@@ -94,6 +93,7 @@ Example Response:
                 reqDeviceId: false,
                 kpi: "RR 30% first 24hours",
                 userFlow: "STORE > DOWNLOAD > OPEN APP"
+                blackListedSources: [ ]
               },
               {
                 id: "HD4CPRIQPAIxbnUHZ3NU",
@@ -110,6 +110,7 @@ Example Response:
                 reqDeviceId: false,
                 kpi: null,
                 userFlow: null
+                blackListedSources: [ "123","BadSource","BlackListedSource" ]
               }
           ],
           minOsVer: "8.0",
@@ -122,17 +123,18 @@ Example Response:
  Response description
 ^^^^^^^^^^^^^^^^^^^^^^
 
-======================  =============================  =====================================================
+======================  ========================  ==============================================================
  FIELD                      TYPE                            Description
-======================  =============================  =====================================================
+======================  ========================  ==============================================================
  campaigns                      Array                      Description and Info about an App
  list                           Array                     List of offers available for the App
  payout                         Decimal                      Payout value in USD ($)
  incent                         Boolean                   True allows incent traffic, filter available.
  reqDeviceId                    Boolean                   if true, add &idfa= & advid= to the tracking link
- health                         Integer                     2 is healthy, 1 is broken, 0 is unknown
- notes                          String                      Campaign notes, including KPIs. Can be null.
-======================  =============================  =====================================================
+ health                         Integer                     2 is healthy, only healthy offers are shown
+ notes                          String                   Campaign notes, including KPIs. Can be null.
+ blackListedSources             String[]             List of sources that have been blacklisted for that offer
+======================  ========================  ==============================================================
 
 
 ------------------
