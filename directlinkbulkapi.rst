@@ -92,8 +92,9 @@ Example Response:
                 offerName: "Stash Invest: Investing & Financial Education - iOS - US - CPI-Incent-US-iOS_[API]",
                 reqDeviceId: false,
                 kpi: "RR 30% first 24hours",
-                userFlow: "STORE > DOWNLOAD > OPEN APP"
-                blackListedSources: [ ]
+                userFlow: "STORE > DOWNLOAD > OPEN APP",
+                blackListedSources: [ ],
+                whiteListedSources: [ ]
               },
               {
                 id: "HD4CPRIQPAIxbnUHZ3NU",
@@ -107,10 +108,11 @@ Example Response:
                 caps: [ ],
                 notes: "Soft incent (CR bellow 7%) | Pause immediately",
                 offerName: "Stash Invest (API) (iPhone 8.0+) US - Incent",
-                reqDeviceId: false,
+                reqDeviceId: true ,
                 kpi: null,
-                userFlow: null
-                blackListedSources: [ "123","BadSource","BlackListedSource" ]
+                userFlow: null,
+                blackListedSources: [ "123","BadSource","BlackListedSource" ],
+                whiteListedSources: [ "foo","goodSource","WhiteListedSource" ]
               }
           ],
           minOsVer: "8.0",
@@ -133,7 +135,8 @@ Example Response:
  reqDeviceId                    Boolean                   if true, add &idfa= & advid= to the tracking link
  health                         Integer                     2 is healthy, only healthy offers are shown
  notes                          String                   Campaign notes, including KPIs. Can be null.
- blackListedSources             String[]             List of sources that have been blacklisted for that offer
+ blackListedSources             String[]             Sources on this list can't convert on that offer
+ whiteListedSources             String[]             Only sources on this list can convert on that offer
 ======================  ========================  ==============================================================
 
 
