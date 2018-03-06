@@ -1,5 +1,4 @@
 # Direct Link Bulk API
-
 -----------
  Endpoint
 -----------
@@ -10,31 +9,24 @@
 
 JWT can be sent on the query String:
 
-  .. code-block:: none
-
-    https://api.mobrand.net/{YOURUSERID}/bulk/offers/{sourceid/appid}?jwt={APIKEY}
+``https://api.mobrand.net/{YOURUSERID}/bulk/offers/{sourceid/appid}?jwt={APIKEY}``
 
 JWT can also be sent on Authorization request header field:
 
-  .. code-block:: none
-
-    Authorization: Bearer {APIKEY}
-
+``Authorization: Bearer {APIKEY}``
 
 ---------
  Filters
 ---------
 
-======================  ============================  ============================================================
- Parameters                      TYPE                            Description
-======================  ============================  ============================================================
- incent                         Boolean                   Show only incent / non-incent traffic
- min_payout                     Decimal                   Minimum value of the payouts to show
- max_payout                     Decimal                   Maximum value of the payouts to show
- onlyTop                        Integer                   The maximum number of offers to show per App
- platform                       String                    Show only "android" or "ios"
- geos                           String                    ISO 3166 two-letter country codes, separated by comma
-======================  ============================  ============================================================
+| Parameters | Type | Description |
+|-|-|-|
+| incent | Boolean | Show only incent / non-incent traffic |
+| min_payout | Decimal | Minimum value of the payouts to show |
+| max_payout | Decimal | Maximum value of the payouts to show |
+| onlyTop | Integer | The maximum number of offers to show per App |
+| platform | String | Show only "android" or "ios" |
+| geos | String | ISO 3166 two-letter country codes, separated by comma |
 
 
  Example Request:
@@ -43,15 +35,12 @@ JWT can also be sent on Authorization request header field:
 
 To show all the offers (no filter), just omit the arguments.
 
-------------
- Response
-------------
+# Response
 
 Example Response:
 
-.. code-block:: javascript
-
-  {
+```
+{
     "sourceid": "tSDe58XoQwKDzvg7fSPSSA",
     "campaigns": [
         {
@@ -107,47 +96,38 @@ Example Response:
           minOsVer: "8.0",
           bundleId: "1017148055"
         }]
-  }
+}
+```
 
 
-^^^^^^^^^^^^^^^^^^^^^^
- Response description
-^^^^^^^^^^^^^^^^^^^^^^
+# Response description
 
-======================  ========================  ==============================================================
- FIELD                      TYPE                            Description
-======================  ========================  ==============================================================
- campaigns                      Array                      Description and Info about an App
- list                           Array                     List of offers available for the App
- payout                         Decimal                      Payout value in USD ($)
- incent                         Boolean                   True allows incent traffic, filter available.
- reqDeviceId                    Boolean                   if true, add &idfa= & advid= to the tracking link
- health                         Integer                     2 is healthy, only healthy offers are shown
- notes                          String                   Campaign notes, including KPIs. Can be null.
- blackListedSources             String[]             Sources on this list can't convert on that offer
- whiteListedSources             String[]             Only sources on this list can convert on that offer
-======================  ========================  ==============================================================
+| Field | Type | Description |
+|-|-|-|
+| campaigns | Array | Description and Info about an App |
+| list | Array | List of offers available for the App |
+| payout | Decimal | Payout value in USD ($) |
+| incent | Boolean | True allows incent traffic, filter available. |
+| reqDeviceId | Boolean | if true, add &idfa= & advid= to the tracking link |
+| health | Integer | 2 is healthy, only healthy offers are shown |
+| notes | String | Campaign notes, including KPIs. Can be null. |
+| blackListedSources | String[] | Sources on this list can't convert on that offer |
+| whiteListedSources | String[] | Only sources on this list can convert on that offer |
 
 
-------------------
- Offerlink Details
-------------------
+# Offerlink Details
 
 To get postback details and get better tracking you need to add the following arguments
 
-======================  ==============================================
- Arguments available:
-======================  ==============================================
- **aff_sub**             Typically used for click_id,sent to postback
- **aff_sub2**            free macro to be sent on postback
- **source**              for your subid
- **idfa**                iOS Advertising Identifier
- **android_id**          android device id
- **advid**               android advertising id
-======================  ==============================================
+| Arguments available: | |
+|-|-|
+| **aff_sub** | Typically used for click_id,sent to postback |
+| **aff_sub2** | free macro to be sent on postback |
+| **source** | for your subid |
+| **idfa** | iOS Advertising Identifier |
+| **android_id** | android device id |
+| **advid** | android advertising id |
 
-^^^^^^^^^^^^^^^^^^^^^^
- Direct Link example:
-^^^^^^^^^^^^^^^^^^^^^^
+# Direct Link example:
 
-``http:``//t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/_LNeaW6gQYKnKJso90PbJA/GCoQNBYWPBoxbnABa3VUZHA?\ **aff_sub**\ =947017de-e150-11e5-b86d-9a79f06e9478&\ **source**\ =thebestsource&\ **idfa**\ =AEBE52E7-03EE-455A-B3C4-E57283966239&\ **android_id**\ =android_id_hash&\ **advid**\ =96bd03b6-defc-4203-83d3-dc1c730801f7
+```http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/_LNeaW6gQYKnKJso90PbJA/GCoQNBYWPBoxbnABa3VUZHA?aff_sub=947017de-e150-11e5-b86d-9a79f06e9478&source=thebestsource&idfa=AEBE52E7-03EE-455A-B3C4-E57283966239&android_id=android_id_hash&advid=96bd03b6-defc-4203-83d3-dc1c730801f7```
