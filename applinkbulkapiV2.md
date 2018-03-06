@@ -1,21 +1,22 @@
 # App Link Bulk API
 ### Endpoint
 #### Method 1
-``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}?jwt={validJWT}``
+``https://api.mobrand.net/{YOURUSERID}/bulk/smartoffers/{sourceid/appid}?jwt={APIKEY}``
 #### Method 2
-``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}``
+``https://api.mobrand.net/{YOURUSERID}/bulk/smartoffers/{sourceid/appid}``
 ##### Http Headers:
-**Authorization**: Bearer {JWT}
+**Authorization**: Bearer {APIKEY}
 #### Example Response:
 ```
 {
   "sourceid": "tSDe58XoQwKDzvg7fSPSSA",
-  "campaigns": [{
+  "campaigns": [
+    {
       "name": "DragonVale",
       "bundleId": "440045374",
       "payoutRange": {
-          "min": 0.71,
-          "max": 1.68
+        "min": 0.71,
+        "max": 1.68
       },
       "category1": "Games",
       "category2": "Simulation",
@@ -26,25 +27,26 @@
       "notes": "USER FLOW: \n1) User clicks on creative and is forwarded to Apple / Google Play Store \n2) User downloads the App on the phone \n3) User opens the App after download",
       "countries": ["jp", "gb", "us"],
       "payoutRanges": {
-          "jp": {
-              "min": 1.15,
-              "max": 1.55
-          },
-          "gb": {
-              "min": 0.71,
-              "max": 0.71
-          },
-          "us": {
-              "min": 1.68,
-              "max": 1.68
-          }
+        "jp": {
+          "min": 1.15,
+          "max": 1.55
+        },
+        "gb": {
+          "min": 0.71,
+          "max": 0.71
+        },
+        "us": {
+          "min": 1.68,
+          "max": 1.68
+        }
       }
-  }]
+    }
+  ]
 }
 ```
 ### Filters
 #### Incent offers
-``https://api.mobrand.net/{publisherId}/bulk/smartoffers/{sourceid/appid}?incent=true/false``
+``https://api.mobrand.net/{YOURUSERID}/bulk/smartoffers/{sourceid/appid}?incent=true/false``
 *  To show only incent offers, the argument should be incent=true.
 *  To not show incent offers, the argument should be incent=false.
 

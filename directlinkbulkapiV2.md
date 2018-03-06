@@ -34,48 +34,48 @@ To show all the offers (no filter), just omit the arguments.
       category1: "apps",
       category2: "finance",
       list: [
-          {
-            id: "GyoAMxwDIQluZ3AGZHddYw",
-            countries: [
-              "us"
-            ],
-            payout: 0.44,
-            incent: false,
-            health: 2,
-            offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/GyoAMxwDIQluZ3AGZHddYw",
-            caps: [
-              {
-                type: "Installs",
-                title: "Daily Cap",
-                amount: 40
-              }
-            ],
-            notes: "",
-            offerName: "Stash Invest: Investing & Financial Education - iOS - US - CPI-Incent-US-iOS_[API]",
-            reqDeviceId: false,
-            kpi: "RR 30% first 24hours",
-            userFlow: "STORE > DOWNLOAD > OPEN APP",
-            blackListedSources: [ ],
-            whiteListedSources: [ ]
-          },
-          {
-            id: "HD4CPRIQPAIxbnUHZ3NU",
-            countries: [
-              "us"
-            ],
-            payout: 0.22,
-            incent: true,
-            health: 1,
-            offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/HD4CPRIQPAIxbnUHZ3NU",
-            caps: [ ],
-            notes: "Soft incent (CR bellow 7%) | Pause immediately",
-            offerName: "Stash Invest (API) (iPhone 8.0+) US - Incent",
-            reqDeviceId: true ,
-            kpi: null,
-            userFlow: null,
-            blackListedSources: [ "123","BadSource","BlackListedSource" ],
-            whiteListedSources: [ "foo","goodSource","WhiteListedSource" ]
-          }
+        {
+          id: "GyoAMxwDIQluZ3AGZHddYw",
+          countries: [
+            "us"
+          ],
+          payout: 0.44,
+          incent: false,
+          health: 2,
+          offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/GyoAMxwDIQluZ3AGZHddYw",
+          caps: [
+            {
+              type: "Installs",
+              title: "Daily Cap",
+              amount: 40
+            }
+          ],
+          notes: "",
+          offerName: "Stash Invest: Investing & Financial Education - iOS - US - CPI-Incent-US-iOS_[API]",
+          reqDeviceId: false,
+          kpi: "RR 30% first 24hours",
+          userFlow: "STORE > DOWNLOAD > OPEN APP",
+          blackListedSources: [ ],
+          whiteListedSources: [ ]
+        },
+        {
+          id: "HD4CPRIQPAIxbnUHZ3NU",
+          countries: [
+            "us"
+          ],
+          payout: 0.22,
+          incent: true,
+          health: 1,
+          offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/HD4CPRIQPAIxbnUHZ3NU",
+          caps: [ ],
+          notes: "Soft incent (CR bellow 7%) | Pause immediately",
+          offerName: "Stash Invest (API) (iPhone 8.0+) US - Incent",
+          reqDeviceId: true ,
+          kpi: null,
+          userFlow: null,
+          blackListedSources: [ "123","BadSource","BlackListedSource" ],
+          whiteListedSources: [ "foo","goodSource","WhiteListedSource" ]
+        }
       ],
       minOsVer: "8.0",
       bundleId: "1017148055"
