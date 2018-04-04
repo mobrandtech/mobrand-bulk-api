@@ -1,4 +1,4 @@
-# Direct Link Bulk API
+# Direct Offerlink API
 ### Endpoint
  * URL: https://api.mobrand.net/{YOURUSERID}/bulk/offers/{sourceid/appid}
  * This Endpoint will only respond to GET.
