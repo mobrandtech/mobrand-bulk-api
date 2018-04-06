@@ -84,12 +84,12 @@ The appid can be retrieved from your backoffice going to:
 2. Click the app that you are integrating
 3. Your ID will be at to the top
 
-![appid](wiki/images/appid.png)
+![appid](https://github.com/mobrandtech/mobrand-sdk-android/wiki/images/appid.png)
 
 
 # 3. Displaying Ads
 
-![adunits](wiki/images/githubadunits.png)
+![adunits](https://github.com/mobrandtech/mobrand-sdk-android/wiki/images/githubadunits.png)
 
 In this section, we describe how you can display ads.
 
