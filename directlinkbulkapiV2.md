@@ -101,7 +101,7 @@ To show all the offers (no filter), just omit the arguments.
 To get postback details and get better tracking you need to add the following arguments
 
 Arguments available: 
-
+|field|description
 |------------|-----------------------------------------------|
 | aff_sub    | Typically used for click_id,sent to postback |
 | aff_sub2   | free macro to be sent on postback            |
