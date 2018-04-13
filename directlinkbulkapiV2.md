@@ -102,7 +102,7 @@ To get postback details and get better tracking you need to add the following ar
 Arguments available:
 
 |-|-|
-| aff_sub    | Typically used for clickid, sent to postback |
+| aff_sub    | Typically used for clickid sent to postback |
 | aff_sub2   | free macro to be sent on postback            |
 | source     | for your subid                               |
 | idfa       | iOS Advertising Identifier                   |
