@@ -101,11 +101,11 @@ To show all the offers (no filter), just omit the arguments.
 To get postback details and get better tracking you need to add the following arguments
 
 |-|-|
-| aff_sub    | Typically used for click_id,sent to postback |
-| aff_sub2   | free macro to be sent on postback            |
+| affsub    | Typically used for clickid sent to postback |
+| affsub2   | free macro to be sent on postback            |
 | source     | for your subid                               |
 | idfa       | iOS Advertising Identifier                   |
-| android_id | android device id                            |
+| androidid | android device id                            |
 | advid      | android advertising id                       |
 
 ### Direct Link example:
