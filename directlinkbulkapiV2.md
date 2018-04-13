@@ -98,15 +98,15 @@ To show all the offers (no filter), just omit the arguments.
 | whiteListedSources | String[] | Only sources on this list can convert on that offer |
 
 ### Offerlink Details
-
 To get postback details and get better tracking you need to add the following arguments
 Arguments available:
+
 |-|-|
-| affsub    | Typically used for clickid sent to postback |
-| affsub2   | free macro to be sent on postback            |
+| aff_sub    | Typically used for clickid, sent to postback |
+| aff_sub2   | free macro to be sent on postback            |
 | source     | for your subid                               |
 | idfa       | iOS Advertising Identifier                   |
-| androidid | android device id                            |
+| android_id | android device id                            |
 | advid      | android advertising id                       |
 
 ### Direct Link example:
