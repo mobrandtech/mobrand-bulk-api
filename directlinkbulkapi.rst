@@ -42,7 +42,6 @@ JWT can also be sent on Authorization request header field:
  incent                         Boolean                   Show only incent / non-incent traffic
  min_payout                     Decimal                   Minimum value of the payouts to show
  max_payout                     Decimal                   Maximum value of the payouts to show
- onlyTop                        Integer                   The maximum number of offers to show per App
  platform                       String                    Show only "android" or "ios"
  geos                           String                    ISO 3166 two-letter country codes, separated by comma
 ======================  ============================  ============================================================
@@ -50,7 +49,7 @@ JWT can also be sent on Authorization request header field:
 
  Example Request:
 
-``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?jwt={validJWT}&incent=false&onlyTop=3&min_payout=0.8``
+``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?jwt={validJWT}&incent=false&min_payout=0.8``
 
 To show all the offers (no filter), just omit the arguments.
 
@@ -129,6 +128,7 @@ Example Response:
  FIELD                      TYPE                            Description
 ======================  ========================  ==============================================================
  campaigns                      Array                      Description and Info about an App
+ bundleId                       String                      The Unique identifier of the App
  list                           Array                     List of offers available for the App
  payout                         Decimal                      Payout value in USD ($)
  incent                         Boolean                   True allows incent traffic, filter available.
@@ -139,6 +139,16 @@ Example Response:
  whiteListedSources             String[]             Only sources on this list can convert on that offer
 ======================  ========================  ==============================================================
 
+Note if you need the preview link to the App store:
+
+.. code-block:: none
+
+    // The following logic can be applied in case you need the app link to the store:
+    if(platform == "android") {
+        "https://play.google.com/store/apps/details?id="+bundleid
+    } else if(platform == "ios") {
+        "https://itunes.apple.com/app/id"+bundleid
+    }
 
 ------------------
  Offerlink Details
