@@ -133,7 +133,6 @@ Example Response:
  payout                         Decimal                      Payout value in USD ($)
  incent                         Boolean                   True allows incent traffic, filter available.
  reqDeviceId                    Boolean                   if true, add &idfa= & advid= to the tracking link
- health                         Integer                     2 is healthy, only healthy offers are shown
  notes                          String                   Campaign notes, including KPIs. Can be null.
  blackListedSources             String[]             Sources on this list can't convert on that offer
  whiteListedSources             String[]             Only sources on this list can convert on that offer
