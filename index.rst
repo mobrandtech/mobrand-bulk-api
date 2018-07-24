@@ -6,4 +6,3 @@ Welcome to the mobrand-bulk-api Docs!
    :maxdepth: 2
 
    directlinkbulkapi
-   applinkbulkapi

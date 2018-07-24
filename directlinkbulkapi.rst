@@ -14,7 +14,7 @@ You will need:
 -----------
  Endpoint
 -----------
- * URL: https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}
+ * URL: https://api.mobrand.net/{publisherId}/bulk/liveoffers/{sourceid/appid}
  * This Endpoint will only respond to GET.
  * All responses are in JSON.
  * Single Request. Paging not available.
@@ -23,7 +23,7 @@ JWT can be sent on the query String:
 
   .. code-block:: none
 
-    https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?jwt={validJWT}
+    https://api.mobrand.net/{publisherId}/bulk/liveoffers/{sourceid/appid}?jwt={validJWT}
 
 JWT can also be sent on Authorization request header field:
 
@@ -49,9 +49,9 @@ JWT can also be sent on Authorization request header field:
 
  Example Request:
 
-``https://api.mobrand.net/{publisherId}/bulk/offers/{sourceid/appid}?jwt={validJWT}&incent=false&min_payout=0.8``
+``https://api.mobrand.net/{publisherId}/bulk/liveoffers/{sourceid/appid}?jwt={validJWT}&incent=false&min_payout=0.8``
 
-To show all the offers (no filter), just omit the arguments.
+To show all the offers (no filter), just omit the parameters.
 
 ------------
  Response
@@ -78,8 +78,7 @@ Example Response:
                 ],
                 payout: 0.44,
                 incent: false,
-                health: 2,
-                offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/GyoAMxwDIQluZ3AGZHddYw",
+                offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/GyoAMxwDIQluZ3AGZHddYw?m=2",
                 caps: [
                   {
                     type: "Installs",
@@ -102,8 +101,7 @@ Example Response:
                 ],
                 payout: 0.22,
                 incent: true,
-                health: 1,
-                offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/HD4CPRIQPAIxbnUHZ3NU",
+                offerLink: "http://t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/tSDe58XoQwKDzvg7fSPSSA/HD4CPRIQPAIxbnUHZ3NU?m=2",
                 caps: [ ],
                 notes: "Soft incent (CR bellow 7%) | Pause immediately",
                 offerName: "Stash Invest (API) (iPhone 8.0+) US - Incent",
@@ -116,6 +114,7 @@ Example Response:
           ],
           minOsVer: "8.0",
           bundleId: "1017148055"
+          previewLink: "https://itunes.apple.com/app/id1017148055"
         }]
   }
 
@@ -129,6 +128,7 @@ Example Response:
 ======================  ========================  ==============================================================
  campaigns                      Array                      Description and Info about an App
  bundleId                       String                      The Unique identifier of the App
+ previewLink                    String                      The Link to the App Store
  list                           Array                     List of offers available for the App
  payout                         Decimal                      Payout value in USD ($)
  incent                         Boolean                   True allows incent traffic, filter available.
@@ -139,22 +139,12 @@ Example Response:
  whiteListedSources             String[]             Only sources on this list can convert on that offer
 ======================  ========================  ==============================================================
 
-Note if you need the preview link to the App store:
-
-.. code-block:: none
-
-    // The following logic can be applied in case you need the app link to the store:
-    if(platform == "android") {
-        "https://play.google.com/store/apps/details?id="+bundleid
-    } else if(platform == "ios") {
-        "https://itunes.apple.com/app/id"+bundleid
-    }
 
 ------------------
  Offerlink Details
 ------------------
 
-To get postback details and get better tracking you need to add the following arguments
+To get postback details and get better tracking you need to add the following parameters/arguments/macros
 
 ======================  ==============================================
  Arguments available:
@@ -171,4 +161,4 @@ To get postback details and get better tracking you need to add the following ar
  Direct Link example:
 ^^^^^^^^^^^^^^^^^^^^^^
 
-``http:``//t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/_LNeaW6gQYKnKJso90PbJA/GCoQNBYWPBoxbnABa3VUZHA?\ **aff_sub**\ =947017de-e150-11e5-b86d-9a79f06e9478&\ **source**\ =thebestsource&\ **idfa**\ =AEBE52E7-03EE-455A-B3C4-E57283966239&\ **android_id**\ =android_id_hash&\ **advid**\ =96bd03b6-defc-4203-83d3-dc1c730801f7
+``http:``//t.mobrand.net/tracking/aff/h_rZwbUlTTC1RGeVHTzXQg/_LNeaW6gQYKnKJso90PbJA/GCoQNBYWPBoxbnABa3VUZHA?m=2&\ **aff_sub**\ =947017de-e150-11e5-b86d-9a79f06e9478&\ **source**\ =thebestsource&\ **idfa**\ =AEBE52E7-03EE-455A-B3C4-E57283966239&\ **android_id**\ =android_id_hash&\ **advid**\ =96bd03b6-defc-4203-83d3-dc1c730801f7
