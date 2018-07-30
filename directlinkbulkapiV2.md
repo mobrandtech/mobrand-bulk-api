@@ -96,9 +96,8 @@ To show all the offers (no filter), just omit the arguments.
 | blackListedSources | String[] | Sources on this list can't convert on that offer |
 | whiteListedSources | String[] | Only sources on this list can convert on that offer |
 
-### Offerlink Details
-To get postback details and get better tracking you need to add the following arguments
-Arguments available:
+### Offerlink Tracking Parameters
+To get postback details and get better tracking you need to add the following parameters/arguments/macros.
 
 |Field| Description|
 |-|-|
