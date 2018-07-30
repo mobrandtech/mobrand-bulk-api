@@ -18,6 +18,7 @@
 | geos | String | ISO 3166 two-letter country codes, separated by comma |
 ##### Example Request:
 ``https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/{sourceid/appid}?jwt={APIKEY}&incent=false&min_payout=0.8``
+
 To show all the offers (no filter), just omit the arguments.
 
 ### Response
