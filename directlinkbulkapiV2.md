@@ -1,5 +1,6 @@
 # Direct Offerlink API
 ### Endpoint
+ * Premium Feed URL: https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/premium/{sourceid/appid}
  * URL: https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/{sourceid/appid}
  * This Endpoint will only respond to GET.
  * All responses are in JSON.
