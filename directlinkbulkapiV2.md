@@ -96,6 +96,14 @@ To show all the offers (no filter), just omit the arguments.
 | notes | String | Campaign notes, including KPIs. Can be null. |
 | blackListedSources | String[] | Sources on this list can't convert on that offer |
 | whiteListedSources | String[] | Only sources on this list can convert on that offer |
+| cap | Cap[] | A list of possible Caps , can be null |
+
+Cap object
+
+| type | Array | "Installs" or "$" |
+| title | Decimal | Possible values: "Monthly Cap","Daily Cap","Daily Budget","Monthly Budget" |
+| amount | Decimal | The ammount to reach before the offer is capped. |
+
 
 ### Offerlink Tracking Parameters
 To get postback details and get better tracking you need to add the following parameters/arguments/macros.
