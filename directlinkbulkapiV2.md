@@ -113,7 +113,7 @@ Cap object
 |-|-|-|
 | type | Array | "Installs" or "$" |
 | title | Decimal | Possible values: "Monthly Cap","Daily Cap","Daily Budget","Monthly Budget" |
-| amount | Decimal | The ammount to reach before the offer is capped. |
+| amount | Decimal | The amount to reach before the offer is capped. |
 
 
 ### Offerlink Tracking Parameters
