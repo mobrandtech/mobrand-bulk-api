@@ -108,6 +108,7 @@ To show all the offers (no filter), just omit the arguments.
 | cap | Cap[] | A list of possible Caps , can be null |
 
 Cap object
+
 | Field | Type | Description |
 |-|-|-|
 | type | Array | "Installs" or "$" |
