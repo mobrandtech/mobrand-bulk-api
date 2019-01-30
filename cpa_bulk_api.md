@@ -19,6 +19,7 @@
 |-|-|-|
 | incent | Boolean | Show only incent / non-incent traffic |
 | adult | Boolean | Show only adult / mainstream |
+| wifi | Boolean | Show only wifi campaigns |
 | min_payout | Decimal | Minimum value of the payouts to show |
 | max_payout | Decimal | Maximum value of the payouts to show |
 | platform | String | Show only "android" or "ios" or "desktop" or "windowsphone" |
