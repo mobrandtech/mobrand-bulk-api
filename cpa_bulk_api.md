@@ -18,6 +18,7 @@
 | Parameters | Type | Description |
 |-|-|-|
 | incent | Boolean | Show only incent / non-incent traffic |
+| adult | Boolean | Show only adult / mainstream |
 | min_payout | Decimal | Minimum value of the payouts to show |
 | max_payout | Decimal | Maximum value of the payouts to show |
 | platform | String | Show only "android" or "ios" or "desktop" or "windowsphone" |
@@ -95,7 +96,7 @@ To show all the offers (no filter), just omit the arguments.
 | countries | Country[] | A list of possible countries |
 | blackListedSources | String[] | Sources on this list can't convert on that offer |
 | whiteListedSources | String[] | Only sources on this list can convert on that offer |
-| cap | Cap[] | A list of possible Caps , can be null |
+| caps | Cap[] | A list of possible Caps , can be null |
 
 Cap object
 
@@ -153,4 +154,4 @@ To get postback details and get better tracking you need to add the following pa
 
 ### Direct Link example:
 
-```https://t.go2offer.link/tracking/superlink/{userid}/{sourceid}?tencadid=HVgTEjQ4HBQxQ2JgZFRraff_sub=947017de-e150-11e5-b86d-9a79f06e9478&source=thebestsource&idfa=AEBE52E7-03EE-455A-B3C4-E57283966239&android_id=android_id_hash&advid=96bd03b6-defc-4203-83d3-dc1c730801f7&source_app=CandyCrush```
+```https://t.go2offer.link/tracking/superlink/{YOURUSERID}/{sourceid}?tencadid=HVgTEjQ4HBQxQ2JgZFRraff_sub=947017de-e150-11e5-b86d-9a79f06e9478&source=thebestsource&idfa=AEBE52E7-03EE-455A-B3C4-E57283966239&android_id=android_id_hash&advid=96bd03b6-defc-4203-83d3-dc1c730801f7&source_app=CandyCrush```
