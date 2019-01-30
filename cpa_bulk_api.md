@@ -1,6 +1,6 @@
-# Direct Offerlink API
+# Direct Offerlink CPA/Mobile Content API
 ### Context
- * This documentation is intended to help you integrate Mobrand's ""CPA/Mobile Content"" offers API Feeds.
+ * This documentation is intended to help you integrate Mobrand's "CPA/Mobile Content" offers API Feeds.
  * You will find instructions on how to integrate Mobrand's General API Feed.
  
 ###### Note: If you are an Account Manager and you are reading this, please do not be scared and pass it to a tech guy as they will for sure understand it.
