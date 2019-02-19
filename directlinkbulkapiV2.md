@@ -19,7 +19,8 @@
 ###### JWT can also be sent on Authorization request header field:
 ``Authorization: Bearer {APIKEY}``
 
-
+##### Example Request:
+``https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/{sourceid/appid}?jwt={APIKEY}``
 
 ### Response
 #### Example Response:
