@@ -12,7 +12,7 @@
  * All responses are in JSON.
  * Single Request. Paging not available.
 
-| Field | Type | Description |
+| Field | Type | value |
 |-|-|-|
 |   url  | string | https://api.mobrand.net/{userid}/bulk/liveoffers/v3/{sourceid}?apikey={apiKey} |
 | userid | String | {YOURUSERID} |
