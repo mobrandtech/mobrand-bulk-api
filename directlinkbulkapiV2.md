@@ -1,26 +1,23 @@
 # Direct Offerlink API
 ### Context
  * This documentation is intended to help you integrate Mobrand's offers API Feeds.
- * You will find instructions on how to integrate Mobrand's General API Feed and Mobrand's Premium API Feed.
- * To have access to Mobrand's Premium API Feed you will need a special permission given by your Account Manager.
- * The only difference between the General API Feed and the Premium API Feed is the URL path.
+ * You will find instructions on how to make the integration.
  * If you are unsure which URL path to use please start by integrating the General API Feed.
  
 ###### Note: If you are an Account Manager and you are reading this, please do not be scared and pass it to a tech guy as they will for sure understand it.
 
 ### Endpoint
- * General API Feed URL: https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/{sourceid/appid}
- * Premium API Feed URL: https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/premium/{sourceid/appid}
+ * YOUR API Feed URL: https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/v3/{YOURSOURCEID}?apikey={YOURAPIKEY}
  * This Endpoint will only respond to GET.
  * All responses are in JSON.
  * Single Request. Paging not available.
-###### JWT can be sent on the query String:
-``https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/{sourceid/appid}?jwt={APIKEY}``
-###### JWT can also be sent on Authorization request header field:
-``Authorization: Bearer {APIKEY}``
 
-##### Example Request:
-``https://api.mobrand.net/{YOURUSERID}/bulk/liveoffers/{sourceid/appid}?jwt={APIKEY}``
+| Field | Type | Description |
+|-|-|-|
+|   url  | string | https://api.mobrand.net/{userid}/bulk/liveoffers/v3/{sourceid}?apikey={apiKey} |
+| userid | String | {YOURUSERID} |
+| sourceid | String | {YOURSOURCEID} |
+| apiKey | String | {YOURAPIKEY} |
 
 ### Response
 #### Example Response:
