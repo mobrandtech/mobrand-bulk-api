@@ -2,7 +2,6 @@
 ### Context
  * This documentation is intended to help you integrate Mobrand's offers API Feeds.
  * You will find instructions on how to make the integration.
- * If you are unsure which URL path to use please start by integrating the General API Feed.
  
 ###### Note: If you are an Account Manager and you are reading this, please do not be scared and pass it to a tech guy as they will for sure understand it.
 
