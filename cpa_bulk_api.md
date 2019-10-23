@@ -6,7 +6,7 @@
 ###### Note: If you are an Account Manager and you are reading this, please do not be scared and pass it to a tech guy as they will for sure understand it.
 
 ### Endpoint
- * General API Feed URL: https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{YOURSOURCEID}
+ * General API Feed URL: https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{YOURSOURCEID}?apikey={APIKEY}
  * This Endpoint will only respond to GET.
  * All responses are in JSON.
  * Single Request. Paging not available.
