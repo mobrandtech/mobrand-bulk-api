@@ -10,10 +10,14 @@
  * This Endpoint will only respond to GET.
  * All responses are in JSON.
  * Single Request. Paging not available.
-###### JWT can be sent on the query String:
-``https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{YOURSOURCEID}?apikey={APIKEY}``
-###### JWT can also be sent on Authorization request header field:
-``Authorization: Bearer {APIKEY}``
+
+| Field | Type | value |
+|-|-|-|
+|   url  | string | https://api.mobrand.net/{userid}/cpa/bulk/liveoffers/{sourceid}?apikey={apiKey} |
+| userid | String | {YOURUSERID} |
+| sourceid | String | {YOURSOURCEID} |
+| apiKey | String | {YOURAPIKEY} |
+
 ### Filters
 | Parameters | Type | Description |
 |-|-|-|
