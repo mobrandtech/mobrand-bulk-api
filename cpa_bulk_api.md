@@ -6,12 +6,12 @@
 ###### Note: If you are an Account Manager and you are reading this, please do not be scared and pass it to a tech guy as they will for sure understand it.
 
 ### Endpoint
- * General API Feed URL: https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{sourceid/appid}
+ * General API Feed URL: https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{YOURSOURCEID}
  * This Endpoint will only respond to GET.
  * All responses are in JSON.
  * Single Request. Paging not available.
 ###### JWT can be sent on the query String:
-``https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{sourceid/appid}?jwt={APIKEY}``
+``https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{YOURSOURCEID}?apikey={APIKEY}``
 ###### JWT can also be sent on Authorization request header field:
 ``Authorization: Bearer {APIKEY}``
 ### Filters
@@ -26,7 +26,7 @@
 | geos | String | ISO 3166 two-letter country codes, separated by comma |
 | preview | Boolean | Show only campaigns with preview url |
 ##### Example Request:
-``https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{sourceid/appid}?jwt={APIKEY}&incent=false&min_payout=0.8``
+``https://api.mobrand.net/{YOURUSERID}/cpa/bulk/liveoffers/{YOURSOURCEID}?apikey={APIKEY}&incent=false&min_payout=0.8``
 
 To show all the offers (no filter), just omit the arguments.
 
